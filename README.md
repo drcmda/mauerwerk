@@ -19,29 +19,31 @@ Simplified Demo: https://codesandbox.io/embed/z6ly40071p
 ```jsx
 import Grid from 'mauerwerk'
 
-<Grid
-  // Arbitrary data, should contain keys, possibly heights, etc.
-  data={this.state.data}
-  // Key accessor, instructs grid on how to fetch individual keys from the data set
-  keys={d => d.name}
-  // Can be a fixed value or an individual data accessor (for variable heights)
-  heights={d => d.height}
-  // Number of columns (make it responsive yourself using react-measure/react-media for instance)
-  columns={2}
-  // Space between elements
-  margin={30}
-  // Removes the possibility to scroll away from a maximized element
-  lockScroll={false}
-  // Delay when maximized elements are minimized again
-  inactiveDelay={500}>
-  {(data, maximized, toggle) => (
-    <div>
-      {data.title}
-      {maximized && <div>Maximized content here</div>}
-      <button onClick={toggle}>{maximized ? 'Close' : 'Open'</button>
-    </div>
-  )}
-</Grid>
+const App = () => (
+  <Grid
+    // Arbitrary data, should contain keys, possibly heights, etc.
+    data={this.state.data}
+    // Key accessor, instructs grid on how to fetch individual keys from the data set
+    keys={d => d.name}
+    // Can be a fixed value or an individual data accessor (for variable heights)
+    heights={d => d.height}
+    // Number of columns (make it responsive yourself using react-measure/react-media for instance)
+    columns={2}
+    // Space between elements
+    margin={30}
+    // Removes the possibility to scroll away from a maximized element
+    lockScroll={false}
+    // Delay when maximized elements are minimized again
+    inactiveDelay={500}>
+    {(data, maximized, toggle) => (
+      <div>
+        {data.title}
+        {maximized && <div>Maximized content here</div>}
+        <button onClick={toggle}>{maximized ? 'Close' : 'Open'</button>
+      </div>
+    )}
+  </Grid>
+)
 ```
 
 You feed mauerwerk any data-set (an array of objects most likely), give it accessors so it can access keys, and optionally individual heights. You reder out each cell via render-prop. You'll receive three arguments:
