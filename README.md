@@ -44,8 +44,8 @@ import Grid from 'mauerwerk'
 </Grid>
 ```
 
-You feed mauerwerk any data-set (an array of objects most likely), give it accessors so it can access keys, and optionally individual heights. You reder out each cell via render-prop. You'll receive three arguments:
+You feed mauerwerk any data-set (an array of objects most likely), give it accessors so it can access keys, and optionally individual heights. You render out each individual cell via render-prop. You'll receive three arguments:
 
-1. `data`, an item from your data-set
+1. `data`, the item from your data-set
 2. `maximized`, the cells state, depending on whether it is `true` or `false` you can display alternating content or use further animation prototypes to transition from cell-state to maximized-state
 3. `toggle`, use this to maximize/minimize your cell
