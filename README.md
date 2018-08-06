@@ -5,8 +5,12 @@
 Animated masonry-like react-grid with enter/exit transitions and maximized cells.
 
 <p align="middle">
-  <img src="assets/grid.gif" width="600" />
+  <img src="assets/grid.gif" />
 </p>
+
+&nbsp;
+&nbsp;
+&nbsp;
 
 Demo: https://codesandbox.io/embed/048079xzw
 
@@ -32,7 +36,7 @@ import Grid from 'mauerwerk'
     <div>
       {data.title}
       {maximized && <div>Maximized content here</div>}
-      <button onClick={toggle}>Maximize</button>
+      <button onClick={toggle}>{maximized ? 'Close' : 'Open'</button>
     </div>
   )}
 </Grid>
