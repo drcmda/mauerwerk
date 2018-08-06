@@ -23,7 +23,7 @@ import Grid from 'mauerwerk'
   // Arbitrary data, should contain keys, possibly heights, etc.
   data={this.state.data}
   // Key accessor, instructs grid on how to fetch individual keys from the data set
-  keys={d => d.name}
+  keys={d => d.key}
   // Can be a fixed value or an individual data accessor (for variable heights)
   heights={d => d.height}
   // Number of columns (make it responsive yourself using react-measure/react-media for instance)
