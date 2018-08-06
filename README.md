@@ -14,6 +14,8 @@ Animated masonry-like react-grid with enter/exit transitions and maximized cells
 
 Demo: https://codesandbox.io/embed/048079xzw
 
+Simplified Demo: https://codesandbox.io/embed/z6ly40071p
+
 ```jsx
 import Grid from 'mauerwerk'
 
