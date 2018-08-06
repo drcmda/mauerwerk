@@ -1,0 +1,104 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js
+
+PATH: 
+  C:\Program Files\Dell\DW WLAN Card;;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;c:\Program Files\WIDCOMM\Bluetooth Software\;c:\Program Files\WIDCOMM\Bluetooth Software\syswow64;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\Microsoft VS Code Insiders\bin;C:\Users\drcmd\AppData\Local\Microsoft\WindowsApps;C:\Users\drcmd\AppData\Roaming\npm;C:\Users\drcmd\AppData\Local\Programs\Git\cmd;C:\Users\drcmd\AppData\Local\Yarn\bin
+
+Yarn version: 
+  1.9.2
+
+Node version: 
+  10.8.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  SyntaxError: C:\Users\drcmd\dev\mauerwerk\package.json: Unexpected token } in JSON at position 1879
+      at JSON.parse (<anonymous>)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:1130:59
+      at Generator.next (<anonymous>)
+      at step (C:\Program Files (x86)\Yarn\lib\cli.js:92:30)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:103:13
+
+npm manifest: 
+  {
+    "name": "mauerwerk",
+    "version": "1.0.0",
+    "description": "⚒ Animated masonry-like grid with enter/exit transitions and maximized cells",
+    "main": "dist/mauerwerk",
+    "module": "dist/mauerwerk.es",
+    "sideEffects": false,
+    "scripts": {
+      "prebuild": "rimraf dist",
+      "build": "rollup -c",
+      "prepare": "npm run build",
+      "test": "echo no tests yet"
+    },
+    "husky": {
+      "hooks": {
+        "pre-commit": "lint-staged"
+      }
+    },
+    "prettier": {
+      "semi": false,
+      "trailingComma": "es5",
+      "singleQuote": true,
+      "jsxBracketSameLine": true,
+      "tabWidth": 2,
+      "printWidth": 80
+    },
+    "lint-staged": {
+      "*.{js,md}": [
+        "prettier --write",
+        "git add"
+      ]
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/drcmda/mauerwerk.git"
+    },
+    "keywords": [
+      "React",
+      "grid",
+      "masonry",
+      "spring",
+      "animation"
+    ],
+    "author": "Paul Henschel",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/drcmda/mauerwerk/issues"
+    },
+    "homepage": "https://github.com/drcmda/mauerwerk#readme",
+    "devDependencies": {
+      "@babel/core": "7.0.0-beta.54",
+      "@babel/plugin-transform-runtime": "7.0.0-beta.54",
+      "@babel/preset-env": "7.0.0-beta.54",
+      "@babel/preset-react": "7.0.0-beta.54",
+      "@babel/preset-stage-2": "7.0.0-beta.54",
+      "@babel/runtime": "7.0.0-beta.54",
+      "babel-core": "7.0.0-bridge.0",
+      "babel-jest": "23.4.0",
+      "babel-plugin-annotate-pure-calls": "0.3.0",
+      "babel-plugin-transform-react-remove-prop-types": "0.4.13",
+      "enzyme": "3.3.0",
+      "enzyme-adapter-react-16": "1.1.1",
+      "enzyme-to-json": "3.3.4",
+      "husky": "^1.0.0-rc.13",
+      "jest": "23.4.1",
+      "lint-staged": "^7.2.0",
+      "prettier": "^1.13.7",
+      "react": "16.4.1",
+      "react-dom": "16.4.1",
+      "rimraf": "2.6.2",
+      "rollup": "0.63.4",
+      "rollup-plugin-babel": "4.0.0-beta.2"
+    },
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

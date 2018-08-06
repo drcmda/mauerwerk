@@ -1,0 +1,85 @@
+{
+  "name": "mauerwerk",
+  "version": "1.0.0",
+  "description": "⚒ Animated masonry-like grid with enter/exit transitions and maximized cells",
+  "main": "dist/mauerwerk",
+  "module": "dist/mauerwerk.es",
+  "sideEffects": false,
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "rollup -c",
+    "prepare": "npm run build",
+    "test": "echo no tests yet"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "prettier": {
+    "semi": false,
+    "trailingComma": "es5",
+    "singleQuote": true,
+    "jsxBracketSameLine": true,
+    "tabWidth": 2,
+    "printWidth": 80
+  },
+  "lint-staged": {
+    "*.{js,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drcmda/mauerwerk.git"
+  },
+  "keywords": [
+    "React",
+    "grid",
+    "masonry",
+    "spring",
+    "animation"
+  ],
+  "author": "Paul Henschel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/drcmda/mauerwerk/issues"
+  },
+  "homepage": "https://github.com/drcmda/mauerwerk#readme",
+  "devDependencies": {
+    "@babel/core": "7.0.0-beta.56",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.56",
+    "@babel/plugin-transform-runtime": "7.0.0-beta.56",
+    "@babel/preset-env": "7.0.0-beta.56",
+    "@babel/preset-react": "7.0.0-beta.56",
+    "@babel/preset-stage-2": "7.0.0-beta.56",
+    "@babel/runtime": "7.0.0-beta.56",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "23.4.2",
+    "babel-plugin-annotate-pure-calls": "0.3.0",
+    "babel-plugin-transform-react-remove-prop-types": "0.4.14",
+    "enzyme": "3.3.0",
+    "enzyme-adapter-react-16": "1.1.1",
+    "enzyme-to-json": "3.3.4",
+    "husky": "^1.0.0-rc.13",
+    "jest": "23.4.2",
+    "lint-staged": "^7.2.0",
+    "prettier": "^1.14.0",
+    "react": "16.4.2",
+    "react-dom": "16.4.2",
+    "rimraf": "2.6.2",
+    "rollup": "0.63.5",
+    "rollup-plugin-babel": "4.0.0-beta.8"
+  },
+  "peerDependencies": {
+    "prop-types": "15.x.x",
+    "react": ">= 16.3.1",
+    "react-dom": ">= 16.3.1"
+  },
+  "dependencies": {
+    "@babel/runtime": "7.0.0-beta.56",
+    "react-measure": "^2.1.0",
+    "react-spring": "^5.3.7"
+  }
+}
