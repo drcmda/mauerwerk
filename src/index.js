@@ -126,6 +126,7 @@ export default class Grid extends React.Component {
                     width: '100%',
                     overflow: 'hidden',
                     height: Math.max(...columnHeights) + margin,
+                    minHeight: '100%',
                   }}>
                   <Transition
                     native
