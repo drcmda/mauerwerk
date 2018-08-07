@@ -124,6 +124,7 @@ export default class Grid extends React.Component {
                   style={{
                     position: 'relative',
                     width: '100%',
+                    overflow: 'hidden',
                     height: Math.max(...columnHeights) + margin,
                   }}>
                   <Transition
