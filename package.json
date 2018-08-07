@@ -1,6 +1,6 @@
 {
   "name": "mauerwerk",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "⚒ Animated masonry-like grid with enter/exit transitions and maximized cells",
   "main": "dist/mauerwerk",
   "module": "dist/mauerwerk.es",
