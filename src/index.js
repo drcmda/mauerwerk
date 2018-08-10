@@ -39,7 +39,7 @@ export default class Grid extends React.Component {
   state = { width: 0, height: 0, open: undefined, lastOpen: undefined }
   scrollOut = e => {
     if (!this.props.lockScroll) {
-      this.state.open && this.onClick(undefined)
+      this.state.open && this.toggle(undefined)
       this.clicked = false
     }
   }
