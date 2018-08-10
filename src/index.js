@@ -56,8 +56,8 @@ export default class Grid extends React.Component {
       [width]: props.client.width,
       [height]: props.client.height,
     })
-  resizeOuter = this.resize('widthOuter', 'heightOuter', props)
-  resizeInner = this.resize('width', 'height', props)
+  resizeOuter = props => this.resize('widthOuter', 'heightOuter', props)
+  resizeInner = props => this.resize('width', 'height', props)
   update = ({ key, x, y, width, height }) => {
     const open = this.state.open === key
     return {
