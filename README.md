@@ -10,7 +10,7 @@
 &nbsp;
 &nbsp;
 
-Demo: https://codesandbox.io/embed/1q178r0rxq
+Demo: https://codesandbox.io/embed/0582jolnl
 
 Simplified Demo: https://codesandbox.io/embed/z6ly40071p
 
@@ -24,7 +24,8 @@ import { Grid } from 'mauerwerk'
   data={this.state.data}
   // Key accessor, instructs grid on how to fetch individual keys from the data set
   keys={d => d.key}
-  // Can be a fixed value or an individual data accessor (for variable heights), if you leave it undefined it will assume 100% container height
+  // Can be a fixed value or an individual data accessor (for variable heights)
+  // If you leave it undefined it will assume 100% container height
   heights={d => d.height}
   // Optional: number of columns (make it responsive yourself using react-measure/react-media)
   columns={3}
