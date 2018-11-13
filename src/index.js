@@ -32,6 +32,7 @@ export class Grid extends React.PureComponent {
     open: PropTypes.string,
   }
   state = {
+    mounted: false,
     width: 0,
     height: 0,
     heightOuter: 0,
@@ -57,6 +58,7 @@ export class Grid extends React.PureComponent {
     this.setState({
       [width]: props.client.width,
       [height]: props.client.height,
+      mounted: width === 'width' || this.state.mounted,
     })
   resizeOuter = props => this.resize('widthOuter', 'heightOuter', props)
   resizeInner = props => this.resize('width', 'height', props)
@@ -151,8 +153,6 @@ export class Grid extends React.PureComponent {
     })
     const overflow = lockScroll ? (curOpen ? 'hidden' : 'auto') : 'auto'
     const totalHeight = Math.max(...columnHeights) + margin
-    const renderContainer = widthOuter > 0 && heightOuter > 0
-    const renderContent = transitionMount || (height > 0 && width > 0)
 
     return (
       <Measure
@@ -186,7 +186,7 @@ export class Grid extends React.PureComponent {
                     update={this.update}
                     impl={impl}
                     config={config}
-                    children={displayData.map(this.cell)}
+                    children={(transitionMount || this.state.mounted) && displayData.map(this.cell)}
                   />
                 </div>
               )}
