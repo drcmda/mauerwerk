@@ -53,11 +53,44 @@ You feed mauerwerk any data-set (an array of objects most likely), give it acces
 2. `open`, the cells state, depending on whether it is `true` or `false` you can display varying content or use further animation prototypes to transition from cell-state to maximized-state
 3. `toggle`, use this to maximize/minimize your cell
 
+### How to use with Clojurescript + Reagent
+
+```cljs
+(ns ....
+ (:require ["mauerwerk" :refer [Grid]]
+           [reagent.core :as r]
+
+(defn widget-data []
+  [{:key 1 :height 700 :title "Hello"}
+   {:key 2 :height 300 :title "World"}])
+
+(defn convert-js-clj [object]
+ (js->clj object :keywordize-keys true))
+
+(defn test-component []
+ [:> Grid
+   {:data       widget-data
+    :keys       (fn [d] (:key (convert-js-clj d)))
+    :heights    (fn [d] (:height (convert-js-clj d)))
+    :columns    3
+    :margin     0
+    :lockScroll false
+    :closeDelay 500}
+   (fn [props]
+    (let [properties (convert-js-clj props)
+          data       (:data properties)
+          open       (:open properties)
+          toggle     (:toggle properties)]
+      (reagent/as-element 
+        [:div
+          (:title data)])))])
+```
+
 ## Effects
 
 You probably don't want flip between open/closed content using static conditions. mauerwerk comes with two simple to use effects:
 
-- `Fade` will fade contents in according to the `show` property. It's a simgple wrapper around react-spring's `Transition`, you can feed it the same properties (config, from, enter, leave, update). By default it will just move opacity from 0 -> 1.
+- `Fade` will fade contents in according to the `show` property. It's a simple wrapper around react-spring's `Transition`, you can feed it the same properties (config, from, enter, leave, update). By default it will just move opacity from 0 -> 1.
 - `Slug` lets elements "crawl" in. It's a wrapper around react-spring's `Trail`. By default it will move opacity from 0 -> 1 and translate y from 40px -> 0px.
 
 These two would work outside the Grids context if you wanted to use them elsewhere.
